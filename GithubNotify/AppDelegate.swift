@@ -1,26 +1,24 @@
-//
-//  AppDelegate.swift
-//  GithubNotify
-//
-//  Created by Erik Price on 9/18/17.
-//  Copyright © 2017 Erik Price. All rights reserved.
-//
 
 import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-
+    
+    let STATUS_ITEM = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        if let button = STATUS_ITEM.button {
+            button.image = NSImage(named: "MenuIconDefault")
+            button.action = #selector(togglePopover(_:))
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
     }
 
-
+    @objc
+    func togglePopover(_ sender: Any?) {
+        print("dongs")
+    }
 }
 
