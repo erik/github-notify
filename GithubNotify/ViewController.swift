@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  GithubNotify
-//
-//  Created by Erik Price on 9/18/17.
-//  Copyright © 2017 Erik Price. All rights reserved.
-//
-
 import Cocoa
 
 class ViewController: NSViewController {
@@ -18,7 +10,7 @@ class ViewController: NSViewController {
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
 
