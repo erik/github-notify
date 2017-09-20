@@ -132,6 +132,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03FDD4D51F70CF6300961701 /* Build configuration list for PBXNativeTarget "GithubNotify" */;
 			buildPhases = (
+				03FDD4F41F732F7F00961701 /* ShellScript */,
 				03FDD4C21F70CF6300961701 /* Sources */,
 				03FDD4C31F70CF6300961701 /* Frameworks */,
 				03FDD4C41F70CF6300961701 /* Resources */,
@@ -191,6 +192,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03FDD4F41F732F7F00961701 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "if [ ! -f \".secrets\" ]; then\n    echo \"Need to populate .secrets!\"\n    exit 1\nfi\n\nsource .secrets\n\nplutil -replace GITHUB_OAUTH_CLIENT_ID -string $GITHUB_OAUTH_ID \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\nplutil -replace GITHUB_OAUTH_CLIENT_SECRET -string $GITHUB_OAUTH_SECRET \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		03FDD4C21F70CF6300961701 /* Sources */ = {
@@ -364,6 +381,7 @@
 				03FDD4D71F70CF6300961701 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

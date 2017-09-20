@@ -6,7 +6,12 @@ import OctoKit
 var OCTO_CLIENT: OCTClient? = nil
 
 func InitGithub() {
-    OCTClient.setClientID("id", clientSecret:     "secret")
+    let infoPlist = Bundle.main.infoDictionary!
+
+    let clientId = infoPlist["GITHUB_OAUTH_CLIENT_ID"] as! String,
+        clientSecret = infoPlist["GITHUB_OAUTH_CLIENT_SECRET"] as! String
+
+    OCTClient.setClientID(clientId, clientSecret: clientSecret)
 
     if let (login, token) = findExistingLogin() {
 
