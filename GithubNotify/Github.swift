@@ -1,27 +1,67 @@
+import Cocoa
+import Foundation
+
 import OctoKit
 
-var CLIENT: OCTClient? = nil
+var OCTO_CLIENT: OCTClient? = nil
 
 func InitGithub() {
     OCTClient.setClientID("id", clientSecret:     "secret")
 
+    if let (login, token) = findExistingLogin() {
+
+        let user = OCTUser(rawLogin: login, server: OCTServer.dotCom())
+        let client = OCTClient.authenticatedClient(with: user, token: token)
+
+        OCTO_CLIENT = client
+        getNotifications()
+    } else {
+        initOAuthFlow()
+    }
+}
+
+func findExistingLogin() -> (String, String)? {
+    if let creds = UserDefaults.standard.dictionary(forKey: "GithubCredentials") as? [String: String] {
+        if let login = creds["login"], let token = creds["token"] {
+            return (login, token)
+        }
+    }
+
+    return nil
+}
+
+
+func initOAuthFlow() {
     OCTClient.signInToServer(usingWebBrowser: OCTServer.dotCom(), scopes: OCTClientAuthorizationScopes.notifications)
-
         .logAll()
-
-        .subscribeNext { (client: Any) -> () in
+        .subscribeNext { (client: Any!) -> () in
             print("sup, client")
             print(client)
 
-            CLIENT = client as? OCTClient
-    }
+            if let client = client as? OCTClient {
+                OCTO_CLIENT = client
 
+                print("CLIENT" , OCTO_CLIENT)
 
-
-    print("i tried")
+                let credentials = [
+                   "login": client.user.rawLogin,
+                   "token": client.token
+                ]
+                UserDefaults.standard.set(credentials, forKey: "GithubCredentials")
+            }
+        }
 }
 
 func HandleGithubOAuthURL(url: URL) {
     OCTClient.completeSignIn(withCallbackURL: url)
     print("completed signin:", url)
+}
+
+func getNotifications () {
+    let notifs = OCTO_CLIENT?.fetchNotificationsNot(matchingEtag: nil, includeReadNotifications: true, updatedSince: nil)
+        .subscribeNext({ response in
+            if let response = response as? OCTResponse, let  {
+                print("notification:", notif.parsedResult)
+            }
+        })
 }
