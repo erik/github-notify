@@ -58,10 +58,13 @@ func HandleGithubOAuthURL(url: URL) {
 }
 
 func getNotifications () {
-    let notifs = OCTO_CLIENT?.fetchNotificationsNot(matchingEtag: nil, includeReadNotifications: true, updatedSince: nil)
-        .subscribeNext({ response in
-            if let response = response as? OCTResponse, let  {
-                print("notification:", notif.parsedResult)
-            }
-        })
+    let notifications = OCTO_CLIENT?.fetchNotificationsNot(matchingEtag: nil, includeReadNotifications: false, updatedSince: nil)
+        .map { raw in
+            if let resp = raw as? OCTResponse { return resp.parsedResult as? OCTNotification }
+            return nil
+        }
+        .filter { n in n != nil }
+        .toArray() as! [OCTNotification]
+
+    print("Unread notifications:", notifications)
 }
