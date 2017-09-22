@@ -14,6 +14,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named: "MenuIconDefault")
             button.action = #selector(togglePopover(_:))
         }
+
+        InitGithub()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -23,7 +25,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func togglePopover(_ sender: Any?) {
         print("toggle popover")
 
-        InitGithub()
+        updateNotifications()
+
     }
 
     func handleGetURL(event: NSAppleEventDescriptor!, withReplyEvent: NSAppleEventDescriptor!) {
