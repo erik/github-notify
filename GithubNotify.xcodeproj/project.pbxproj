@@ -30,6 +30,7 @@
 		03FDD4F11F70D83800961701 /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4DB1F70D74200961701 /* OctoKit.framework */; };
 		03FDD4F21F70D83800961701 /* OctoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4DB1F70D74200961701 /* OctoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03FDD4F61F788BB400961701 /* GithubLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FDD4F51F788BB400961701 /* GithubLoader.swift */; };
+		03FDD4F81F788D8400961701 /* OAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4F71F788D8400961701 /* OAuth2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +66,7 @@
 		03FDD4E11F70D7D700961701 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		03FDD4E21F70D7D700961701 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		03FDD4F51F788BB400961701 /* GithubLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubLoader.swift; sourceTree = "<group>"; };
+		03FDD4F71F788D8400961701 /* OAuth2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuth2.framework; path = Carthage/Build/Mac/OAuth2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				03FDD4E91F70D83800961701 /* Mantle.framework in Frameworks */,
 				03FDD4E31F70D7D700961701 /* ISO8601DateFormatter.framework in Frameworks */,
 				03FDD4EB1F70D83800961701 /* ReactiveCocoa.framework in Frameworks */,
+				03FDD4F81F788D8400961701 /* OAuth2.framework in Frameworks */,
 				03FDD4E51F70D7D700961701 /* ReactiveCocoa.framework in Frameworks */,
 				03FDD4EF1F70D83800961701 /* AFNetworking.framework in Frameworks */,
 			);
@@ -95,6 +98,7 @@
 			children = (
 				03FDD4C81F70CF6300961701 /* GithubNotify */,
 				03FDD4C71F70CF6300961701 /* Products */,
+				03FDD4F71F788D8400961701 /* OAuth2.framework */,
 				03FDD4DF1F70D7D700961701 /* ISO8601DateFormatter.framework */,
 				03FDD4E01F70D7D700961701 /* Mantle.framework */,
 				03FDD4E11F70D7D700961701 /* ReactiveCocoa.framework */,

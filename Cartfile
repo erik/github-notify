@@ -1,2 +1,3 @@
 github "SwiftyJSON/SwiftyJSON"
 github "octokit/octokit.objc"
+github "p2/OAuth2" ~> 3.0
