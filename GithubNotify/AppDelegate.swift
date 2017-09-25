@@ -16,17 +16,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         InitGithub()
+        Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(AppDelegate.refresh), userInfo: nil, repeats: true)
+
     }
 
+    
     func applicationWillTerminate(_ aNotification: Notification) {
     }
 
     @objc
     func togglePopover(_ sender: Any?) {
-        print("toggle popover")
+        NSWorkspace.shared().open(URL(string: "https://github.com/notifications")!)
+    }
 
+    func refresh() {
+        print("refreshing!")
         updateNotifications()
-
     }
 
     func handleGetURL(event: NSAppleEventDescriptor!, withReplyEvent: NSAppleEventDescriptor!) {

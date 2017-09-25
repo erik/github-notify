@@ -4,12 +4,8 @@ import Foundation
 import OctoKit
 import SwiftyJSON
 
-let NOTIFICATION_ENDPOINT = "https://api.github.com/notifications"
-var OCTO_CLIENT: OCTClient? = nil
-var OCTO_TOKEN: String = ""
+var TOKEN: String? = nil
 var NOTIFICATIONS: [JSON] = []
-var ETAG: String = ""
-
 
 func InitGithub() {
     guard let infoPlist = Bundle.main.infoDictionary,
@@ -21,35 +17,30 @@ func InitGithub() {
 
     OCTClient.setClientID(clientId, clientSecret: clientSecret)
 
-    if let (login, token) = findExistingLogin() {
-        let user = OCTUser(rawLogin: login, server: OCTServer.dotCom())
-
-        OCTO_TOKEN = token
-        OCTO_CLIENT = OCTClient.authenticatedClient(with: user, token: token)
+    if let token = findExistingToken() {
+        TOKEN = token
         updateNotifications()
     } else {
         initOAuthFlow()
     }
 }
 
-func findExistingLogin() -> (String, String)? {
-    if let creds = UserDefaults.standard.dictionary(forKey: "GithubCredentials") as? [String: String] {
-        if let login = creds["login"], let token = creds["token"] {
-            return (login, token)
-        }
+func findExistingToken() -> String? {
+    guard let creds = UserDefaults.standard.dictionary(forKey: "GithubCredentials") as? [String: String],
+        let token = creds["token"]
+        else {
+            return nil
     }
 
-    return nil
+    return token
 }
-
 
 func initOAuthFlow() {
     OCTClient.signInToServer(usingWebBrowser: OCTServer.dotCom(), scopes: OCTClientAuthorizationScopes.notifications)
         .logAll()
         .subscribeNext { (client: Any) -> () in
             if let client = client as? OCTClient {
-                OCTO_CLIENT = client
-                OCTO_TOKEN = client.token
+                TOKEN = client.token
 
                 let credentials = [
                    "login": client.user.rawLogin,
@@ -68,10 +59,15 @@ func HandleGithubOAuthURL(url: URL) {
 
 
 func updateNotifications (page: Int = 1) {
+    guard let token = TOKEN else {
+        print("Not authed!")
+        return
+    }
+
     var request = URLRequest(url: URL(string: "https://api.github.com/notifications?per_page=100&page=\(page)")!)
     request.httpMethod = "GET"
     request.addValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
-    request.addValue("token \(OCTO_TOKEN)", forHTTPHeaderField: "Authorization")
+    request.addValue("token \(token)", forHTTPHeaderField: "Authorization")
 
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
         guard let data = data, error == nil else {
