@@ -33,12 +33,11 @@ class GithubLoader: OAuth2DataLoader {
                 let responseString = String(data: try response.responseData(), encoding: .utf8)!
                 let notifications = JSON.parse(responseString).array!
 
-                DispatchQueue.main.async() {
+                DispatchQueue.main.async {
                     callback(notifications, nil)
                 }
-            }
-            catch let error {
-                DispatchQueue.main.async() {
+            } catch let error {
+                DispatchQueue.main.async {
                     callback(nil, error)
                 }
             }
