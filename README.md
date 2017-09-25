@@ -1,4 +1,8 @@
 # GithubNotify
 
-it sits in your menubar and changes color when you have unread github notifications.
+It sits in your menubar and changes color when you have unread github notifications.
 
+## Quick install
+
+Grab the latest [release](https://github.com/erik/github-notify/releases), unzip, and
+run GithubNotify.
