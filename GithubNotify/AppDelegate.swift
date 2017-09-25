@@ -81,7 +81,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc
     func refreshNotifications(_: Any?) {
         github.refreshNotifications { notifications, error in
-            if let error = error {
+            if let error = error as? URLError, error.code == URLError.Code.notConnectedToInternet {
+                // Would be too noisy if we alerted every time we closed the lid.
+                print("Not connected to internet")
+                return
+            } else if let error = error {
                 NSAlert(error: error).runModal()
                 return
             }
