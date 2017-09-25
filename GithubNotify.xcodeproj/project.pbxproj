@@ -10,26 +10,9 @@
 		03FDD4CA1F70CF6300961701 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FDD4C91F70CF6300961701 /* AppDelegate.swift */; };
 		03FDD4CE1F70CF6300961701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03FDD4CD1F70CF6300961701 /* Assets.xcassets */; };
 		03FDD4D11F70CF6300961701 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FDD4CF1F70CF6300961701 /* Main.storyboard */; };
-		03FDD4DC1F70D74200961701 /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4DB1F70D74200961701 /* OctoKit.framework */; };
-		03FDD4DE1F70D7CA00961701 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4DD1F70D7CA00961701 /* AFNetworking.framework */; };
-		03FDD4E31F70D7D700961701 /* ISO8601DateFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4DF1F70D7D700961701 /* ISO8601DateFormatter.framework */; };
-		03FDD4E41F70D7D700961701 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4E01F70D7D700961701 /* Mantle.framework */; };
-		03FDD4E51F70D7D700961701 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4E11F70D7D700961701 /* ReactiveCocoa.framework */; };
-		03FDD4E61F70D7D700961701 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4E21F70D7D700961701 /* SwiftyJSON.framework */; };
-		03FDD4E71F70D83800961701 /* ISO8601DateFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4DF1F70D7D700961701 /* ISO8601DateFormatter.framework */; };
-		03FDD4E81F70D83800961701 /* ISO8601DateFormatter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4DF1F70D7D700961701 /* ISO8601DateFormatter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		03FDD4E91F70D83800961701 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4E01F70D7D700961701 /* Mantle.framework */; };
-		03FDD4EA1F70D83800961701 /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4E01F70D7D700961701 /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		03FDD4EB1F70D83800961701 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4E11F70D7D700961701 /* ReactiveCocoa.framework */; };
-		03FDD4EC1F70D83800961701 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4E11F70D7D700961701 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03FDD4ED1F70D83800961701 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4E21F70D7D700961701 /* SwiftyJSON.framework */; };
 		03FDD4EE1F70D83800961701 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4E21F70D7D700961701 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		03FDD4EF1F70D83800961701 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4DD1F70D7CA00961701 /* AFNetworking.framework */; };
-		03FDD4F01F70D83800961701 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4DD1F70D7CA00961701 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		03FDD4F11F70D83800961701 /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4DB1F70D74200961701 /* OctoKit.framework */; };
-		03FDD4F21F70D83800961701 /* OctoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4DB1F70D74200961701 /* OctoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03FDD4F61F788BB400961701 /* GithubLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FDD4F51F788BB400961701 /* GithubLoader.swift */; };
-		03FDD4F81F788D8400961701 /* OAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4F71F788D8400961701 /* OAuth2.framework */; };
 		03FDD4F91F788E8400961701 /* OAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4F71F788D8400961701 /* OAuth2.framework */; };
 		03FDD4FA1F788E8400961701 /* OAuth2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03FDD4F71F788D8400961701 /* OAuth2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -41,13 +24,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				03FDD4F21F70D83800961701 /* OctoKit.framework in Embed Frameworks */,
 				03FDD4EE1F70D83800961701 /* SwiftyJSON.framework in Embed Frameworks */,
-				03FDD4F01F70D83800961701 /* AFNetworking.framework in Embed Frameworks */,
-				03FDD4E81F70D83800961701 /* ISO8601DateFormatter.framework in Embed Frameworks */,
 				03FDD4FA1F788E8400961701 /* OAuth2.framework in Embed Frameworks */,
-				03FDD4EC1F70D83800961701 /* ReactiveCocoa.framework in Embed Frameworks */,
-				03FDD4EA1F70D83800961701 /* Mantle.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,11 +38,6 @@
 		03FDD4CD1F70CF6300961701 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03FDD4D01F70CF6300961701 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03FDD4D21F70CF6300961701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03FDD4DB1F70D74200961701 /* OctoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OctoKit.framework; path = Carthage/Build/Mac/OctoKit.framework; sourceTree = "<group>"; };
-		03FDD4DD1F70D7CA00961701 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/Mac/AFNetworking.framework; sourceTree = "<group>"; };
-		03FDD4DF1F70D7D700961701 /* ISO8601DateFormatter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ISO8601DateFormatter.framework; path = Carthage/Build/Mac/ISO8601DateFormatter.framework; sourceTree = "<group>"; };
-		03FDD4E01F70D7D700961701 /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = Carthage/Build/Mac/Mantle.framework; sourceTree = "<group>"; };
-		03FDD4E11F70D7D700961701 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		03FDD4E21F70D7D700961701 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		03FDD4F51F788BB400961701 /* GithubLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubLoader.swift; sourceTree = "<group>"; };
 		03FDD4F71F788D8400961701 /* OAuth2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuth2.framework; path = Carthage/Build/Mac/OAuth2.framework; sourceTree = "<group>"; };
@@ -75,20 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03FDD4DC1F70D74200961701 /* OctoKit.framework in Frameworks */,
-				03FDD4E41F70D7D700961701 /* Mantle.framework in Frameworks */,
-				03FDD4E71F70D83800961701 /* ISO8601DateFormatter.framework in Frameworks */,
-				03FDD4E61F70D7D700961701 /* SwiftyJSON.framework in Frameworks */,
 				03FDD4ED1F70D83800961701 /* SwiftyJSON.framework in Frameworks */,
-				03FDD4DE1F70D7CA00961701 /* AFNetworking.framework in Frameworks */,
-				03FDD4F11F70D83800961701 /* OctoKit.framework in Frameworks */,
-				03FDD4E91F70D83800961701 /* Mantle.framework in Frameworks */,
-				03FDD4E31F70D7D700961701 /* ISO8601DateFormatter.framework in Frameworks */,
-				03FDD4EB1F70D83800961701 /* ReactiveCocoa.framework in Frameworks */,
-				03FDD4F81F788D8400961701 /* OAuth2.framework in Frameworks */,
 				03FDD4F91F788E8400961701 /* OAuth2.framework in Frameworks */,
-				03FDD4E51F70D7D700961701 /* ReactiveCocoa.framework in Frameworks */,
-				03FDD4EF1F70D83800961701 /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,12 +62,7 @@
 				03FDD4C81F70CF6300961701 /* GithubNotify */,
 				03FDD4C71F70CF6300961701 /* Products */,
 				03FDD4F71F788D8400961701 /* OAuth2.framework */,
-				03FDD4DF1F70D7D700961701 /* ISO8601DateFormatter.framework */,
-				03FDD4E01F70D7D700961701 /* Mantle.framework */,
-				03FDD4E11F70D7D700961701 /* ReactiveCocoa.framework */,
 				03FDD4E21F70D7D700961701 /* SwiftyJSON.framework */,
-				03FDD4DD1F70D7CA00961701 /* AFNetworking.framework */,
-				03FDD4DB1F70D74200961701 /* OctoKit.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -342,6 +298,7 @@
 				);
 				INFOPLIST_FILE = GithubNotify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = net.erikprice.GithubNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -360,6 +317,7 @@
 				);
 				INFOPLIST_FILE = GithubNotify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = net.erikprice.GithubNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

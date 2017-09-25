@@ -32,11 +32,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 NSAlert(error: error!).runModal()
                 NSApp.terminate(self)
             } else {
-                self.refreshNotifications()
+                self.refreshNotifications(nil)
             }
         })
 
-        self.updateMenuIcon()
+        self.updateMenubarIcon()
+        self.buildIconMenu()
 
         // Refresh the unread notification count.
         Timer.scheduledTimer(timeInterval: 60.0,
@@ -51,7 +52,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared().open(URL(string: "https://github.com/notifications")!)
     }
 
-    func updateMenuIcon() {
+    func buildIconMenu() {
+        let menu = NSMenu()
+
+        menu.addItem(NSMenuItem(title: "Refresh notifications", action: #selector(AppDelegate.refreshNotifications(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Open in browser", action: #selector(AppDelegate.openNotificationUrl(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Quit GithubNotify", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        
+        statusItem.menu = menu
+    }
+
+    func updateMenubarIcon() {
         let icon : String
         if self.unreadCount > 0 {
             icon = "MenuIconUnread"
@@ -66,8 +78,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func refreshNotifications() {
-        print("refreshing!")
+    @objc
+    func refreshNotifications(_ sender: Any?) {
         self.github.refreshNotifications() { notifications, error in
             if let error = error {
                 NSAlert(error: error).runModal()
@@ -75,7 +87,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
 
             self.unreadCount = notifications!.count
-            self.updateMenuIcon()
+            self.updateMenubarIcon()
         }
     }
 
