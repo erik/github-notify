@@ -1,4 +1,6 @@
-# GithubNotify
+# ![icon][icon] GithubNotify 
+
+[icon]: https://raw.githubusercontent.com/erik/github-notify/master/GithubNotify/Assets.xcassets/MenuIconDefault.imageset/MenuIconDefault.png
 
 It sits in your menubar and changes color when you have unread github notifications.
 
